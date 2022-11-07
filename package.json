@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.26",
+    "cypress": "^10.11.0",
     "i18next": "^22.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -28,7 +29,8 @@
     "eject": "react-scripts eject",
     "prettier": "prettier --write .",
     "lint": "eslint ./ --ext ts,tsx,js --cache",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "e2e-tests": "yarn run cypress open --browser chrome --e2e"
   },
   "eslintConfig": {
     "extends": [

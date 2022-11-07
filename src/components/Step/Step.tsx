@@ -1,6 +1,7 @@
 import React, { FC, Fragment } from 'react'
 import { InputFieldProps } from '../../types/Insurance'
 import InputField from '../InputField/InputField'
+import translate from '../../locales/i18n'
 
 interface StepProps {
   onNextStep: () => void
@@ -32,7 +33,7 @@ const Step: FC<StepProps> = (props) => {
     <Fragment>
       {renderInputFields()}
       <button disabled={isInvalid} onClick={onNextStep}>
-        Next
+        {translate('Basic.button.next')}
       </button>
       {isInvalid && <span>{errorMessage}</span>}
     </Fragment>

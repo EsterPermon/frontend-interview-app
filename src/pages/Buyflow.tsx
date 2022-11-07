@@ -10,6 +10,7 @@ import { ProductIds, PRODUCT_IDS_TO_NAMES, StepType } from '../utils/constants'
 import SummaryStep from '../components/Steps/SummaryStep'
 import { PurchaseDataType } from '../types/Insurance'
 import { mapStepToComponent } from '../utils/workflow'
+import translate from '../locales/i18n'
 
 interface BuyflowProps {
   productId: ProductIds
@@ -27,7 +28,7 @@ const Buyflow: ElementType<BuyflowProps> = (props) => {
     setStepId((prev) => prev + 1)
   }
 
-  const fallBack = useMemo(() => <Fragment>Step not Found!</Fragment>, [])
+  const fallBack = useMemo(() => <Fragment>{translate('Buyflow.stepNotFound')}</Fragment>, [])
 
   const renderSteps = useCallback(() => {
     if (currentStep === StepType.summary) {
@@ -46,7 +47,7 @@ const Buyflow: ElementType<BuyflowProps> = (props) => {
 
   return (
     <Fragment>
-      <h4>Buying {PRODUCT_IDS_TO_NAMES[productId]}</h4>
+      <h4>{translate('Buyflow.title')} {PRODUCT_IDS_TO_NAMES[productId]}</h4>
       {renderSteps()}
     </Fragment>
   )

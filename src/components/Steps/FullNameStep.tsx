@@ -2,6 +2,7 @@ import { FC, useCallback, useMemo, useReducer, useState } from 'react'
 import Step from '../Step/Step'
 import { InputType, StepType } from '../../utils/constants'
 import { EventType, StepProps } from '../../types/Insurance'
+import translate from '../../locales/i18n'
 
 type Name = {
   firstname: string
@@ -54,12 +55,15 @@ const FullNameStep: FC<StepProps> = (props) => {
 
   const validateName = useCallback((): boolean => {
     const { firstname, lastname } = name
+    let message
     if (!firstname) {
-      setInvalidInputMessage('First name should not be empty!')
+      message = translate('Steps.Fullname.errorMessage.firstname')
+      setInvalidInputMessage(message)
       return false
     }
     if (!lastname) {
-      setInvalidInputMessage('Last name should not be empty!')
+      message = translate('Steps.Fullname.errorMessage.lastname')
+      setInvalidInputMessage(message)
       return false
     }
     return true
@@ -75,13 +79,13 @@ const FullNameStep: FC<StepProps> = (props) => {
   const inputs = useMemo(
     () => [
       {
-        label: 'First Name:',
+        label: translate('Steps.Fullname.label.firstname'),
         inputType: InputType.text,
         initialValue: name.firstname,
         onChange: (event: EventType) => handleOnChange(event, FIRSTNAME),
       },
       {
-        label: 'Last Name:',
+        label: translate('Steps.Fullname.label.lastname'),
         inputType: InputType.text,
         initialValue: name.lastname,
         onChange: (event: EventType) => handleOnChange(event, LASTNAME),

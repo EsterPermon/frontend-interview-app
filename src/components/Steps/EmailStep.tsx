@@ -2,6 +2,7 @@ import { FC, useCallback, useState, useMemo } from 'react'
 import { EventType, StepProps } from '../../types/Insurance'
 import { InputType, StepType } from '../../utils/constants'
 import Step from '../Step/Step'
+import translate from '../../locales/i18n'
 
 const EmailStep: FC<StepProps> = (props) => {
   const [email, setEmail] = useState('')
@@ -15,13 +16,16 @@ const EmailStep: FC<StepProps> = (props) => {
   }, [])
 
   const validateEmail = useCallback((): boolean => {
+    let message = ''
     if (!email.length) {
-      setInvalidInputMessage('Email cannot be empty!')
+      message = translate('Steps.Email.errorMessage.empty')
+      setInvalidInputMessage(message)
       return false
     }
     const emailRegex = /[\s\S]+@[a-z]+.com$/i
     if (!email.match(emailRegex)) {
-      setInvalidInputMessage('Email must follow pattern "johndoe@email.com"!')
+      message = translate('Steps.Email.errorMessage.invalid')
+      setInvalidInputMessage(message)
       return false
     }
     return true
@@ -33,7 +37,7 @@ const EmailStep: FC<StepProps> = (props) => {
 
   const inputs = useMemo(() => [
     {
-      label: 'Email:',
+      label: translate('Steps.Email.label'),
       inputType: InputType.text,
       initialValue: email,
       onChange: handleOnChange,

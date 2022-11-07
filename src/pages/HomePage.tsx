@@ -1,17 +1,18 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { ProductIds, PRODUCT_IDS_TO_NAMES } from '../utils/constants'
+import translate from '../locales/i18n'
 
 const HomePage = () => {
   return (
     <Fragment>
-      <p>Welcome to Getsafe's Insurances</p>
+      <p>{translate('HomePage.title')}</p>
       <Link to="/buy/insurance_design">
-        Get started with {PRODUCT_IDS_TO_NAMES[ProductIds.designIns]}
+        {translate('HomePage.getStarted')} {PRODUCT_IDS_TO_NAMES[ProductIds.designIns]}
       </Link>
       <hr />
       <Link to="/buy/insurance_dev">
-        Get started with {PRODUCT_IDS_TO_NAMES[ProductIds.devIns]}
+      {translate('HomePage.getStarted')} {PRODUCT_IDS_TO_NAMES[ProductIds.devIns]}
       </Link>
     </Fragment>
   )

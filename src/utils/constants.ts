@@ -3,3 +3,10 @@ export enum InputType {
   number = 'number',
   email = 'email',
 }
+
+export enum StepType {
+  age = 'Age',
+  email = 'Email',
+  summary = 'Summary',
+  fullName = 'Full Name'
+}

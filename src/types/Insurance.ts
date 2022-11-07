@@ -10,3 +10,6 @@ export interface InputFieldProps {
   initialValue: number | string
 }
 
+export interface StepProps {
+  callback: (field: string, value: number | string) => void
+}

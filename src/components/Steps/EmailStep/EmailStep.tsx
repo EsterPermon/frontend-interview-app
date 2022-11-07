@@ -1,8 +1,8 @@
 import { FC, useCallback, useState, useMemo } from 'react'
-import { EventType, StepProps } from '../../types/Insurance'
-import { InputType, StepType } from '../../utils/constants'
-import Step from '../Step/Step'
-import translate from '../../locales/i18n'
+import { EventType, StepProps } from '../../../types/Insurance'
+import { InputType, StepType } from '../../../utils/constants'
+import Step from '../../Step/Step'
+import translate from '../../../locales/i18n'
 
 const EmailStep: FC<StepProps> = (props) => {
   const [email, setEmail] = useState('')

@@ -14,11 +14,11 @@ export default {
   },
   Steps: {
     Age: {
-      label: 'Age: ',
+      label: 'Age:',
       errorMessage: 'Age must be higher than 0!',
     },
     Email: {
-      label: 'Email: ',
+      label: 'Email:',
       errorMessage: {
         empty: 'Email cannot be empty!',
         invalid: 'Email must follow pattern "johndoe@email.com"!',
@@ -26,8 +26,8 @@ export default {
     },
     Fullname: {
       label: {
-        firstname: 'First Name: ',
-        lastname: 'Last Name: ',
+        firstname: 'First Name:',
+        lastname: 'Last Name:',
       },
       errorMessage: {
         firstname: 'First Name should not be empty!',

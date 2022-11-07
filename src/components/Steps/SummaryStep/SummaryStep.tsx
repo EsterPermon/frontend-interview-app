@@ -1,7 +1,8 @@
-import { FC, Fragment } from 'react'
+import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { PurchaseDataType } from '../../types/Insurance'
-import { ProductIds } from '../../utils/constants'
+import { PurchaseDataType } from '../../../types/Insurance'
+import { ProductIds } from '../../../utils/constants'
+import SummaryStepStyles from './SummaryStepStyles'
 
 interface SummaryStepProps {
   collectedData: PurchaseDataType[]
@@ -16,19 +17,19 @@ const SummaryStep: FC<SummaryStepProps> = (props) => {
       const { field, value } = data
       return (
         <div key={i}>
-          {field}: {value}
+          <span className="field">{field}:</span> {value}
         </div>
       )
     })
   }
 
   return (
-    <Fragment>
-      {renderPurchaseData()}
-      <div>
+    <SummaryStepStyles>
+      <div className="infos">{renderPurchaseData()}</div>
+      <div className="confirm">
         <Link to={`/purchased=${productId}`}>Purchase</Link>
       </div>
-    </Fragment>
+    </SummaryStepStyles>
   )
 }
 

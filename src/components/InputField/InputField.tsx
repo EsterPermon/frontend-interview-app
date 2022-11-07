@@ -1,14 +1,15 @@
-import { FC, Fragment } from 'react'
+import { FC } from 'react'
 import { InputFieldProps } from '../../types/Insurance'
+import InputFieldStyles from './InputFieldStyes'
 
 const InputField: FC<InputFieldProps> = (props) => {
   const { label, onChange, inputType, initialValue } = props
 
   return (
-    <Fragment>
+    <InputFieldStyles>
       {label}
       <input required type={inputType} onChange={onChange} value={initialValue} />
-    </Fragment>
+    </InputFieldStyles>
   )
 }
 

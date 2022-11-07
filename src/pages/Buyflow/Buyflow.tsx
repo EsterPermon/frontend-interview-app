@@ -6,11 +6,11 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { ProductIds, PRODUCT_IDS_TO_NAMES, StepType } from '../utils/constants'
-import SummaryStep from '../components/Steps/SummaryStep'
-import { PurchaseDataType } from '../types/Insurance'
-import { mapStepToComponent } from '../utils/workflow'
-import translate from '../locales/i18n'
+import { ProductIds, PRODUCT_IDS_TO_NAMES, StepType } from '../../utils/constants'
+import SummaryStep from '../../components/Steps/SummaryStep/SummaryStep'
+import { PurchaseDataType } from '../../types/Insurance'
+import { mapStepToComponent } from '../../utils/workflow'
+import translate from '../../locales/i18n'
 
 interface BuyflowProps {
   productId: ProductIds

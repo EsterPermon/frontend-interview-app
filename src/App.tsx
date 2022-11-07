@@ -1,13 +1,13 @@
 import logo from './logo.svg'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Buyflow from './pages/Buyflow'
+import Buyflow from './pages/Buyflow/Buyflow'
 import {
   DesignInsuranceSteps,
   DevInsuranceSteps,
   ProductIds,
 } from './utils/constants'
-import HomePage from './pages/HomePage'
+import HomePage from './pages/HomePage/HomePage'
 
 const App = () => {
   return (

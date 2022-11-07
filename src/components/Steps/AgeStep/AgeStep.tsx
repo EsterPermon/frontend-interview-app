@@ -1,8 +1,8 @@
 import { FC, useCallback, useMemo, useState } from 'react'
-import Step from '../Step/Step'
-import { InputType, StepType } from '../../utils/constants'
-import { EventType, StepProps } from '../../types/Insurance'
-import translate from '../../locales/i18n'
+import Step from '../../Step/Step'
+import { InputType, StepType } from '../../../utils/constants'
+import { EventType, StepProps } from '../../../types/Insurance'
+import translate from '../../../locales/i18n'
 
 const AgeStep: FC<StepProps> = (props) => {
   const [age, setAge] = useState(0)

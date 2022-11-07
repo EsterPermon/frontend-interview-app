@@ -9,7 +9,7 @@ export const mapStepToComponent = (step: StepType): ElementType | null => {
     case StepType.email:
       return lazy(() => import('../components/Steps/EmailStep'))
 
-    case StepType.fullName:
+    case StepType.fullname:
       return lazy(() => import('../components/Steps/FullNameStep'))
 
     default:

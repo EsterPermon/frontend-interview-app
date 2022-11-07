@@ -8,7 +8,7 @@ export enum StepType {
   age = 'Age',
   email = 'Email',
   summary = 'Summary',
-  fullName = 'Full Name'
+  fullname = 'Full Name'
 }
 
 export enum ProductIds {

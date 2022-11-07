@@ -1,6 +1,6 @@
 import logo from './logo.svg'
 import './App.css'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import Buyflow from './pages/Buyflow/Buyflow'
 import {
   DesignInsuranceSteps,
@@ -26,9 +26,10 @@ const App = () => {
           <Route path="/buy/insurance_dev">
             <Buyflow steps={DevInsuranceSteps} productId={ProductIds.devIns} />
           </Route>
-          <Route path="/">
+          <Route path="/home">
             <HomePage />
           </Route>
+          <Redirect to="/home" />
         </Switch>
       </div>
     </Router>

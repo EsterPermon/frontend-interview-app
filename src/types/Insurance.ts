@@ -8,6 +8,7 @@ export interface InputFieldProps {
   onChange: (event: EventType) => void
   inputType: InputType
   initialValue: number | string
+  dataCy: string
 }
 
 export interface StepProps {

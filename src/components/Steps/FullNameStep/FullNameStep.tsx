@@ -3,6 +3,7 @@ import Step from '../../Step/Step'
 import { InputType, StepType } from '../../../utils/constants'
 import { EventType, StepProps } from '../../../types/Insurance'
 import translate from '../../../locales/i18n'
+import { FIRST_NAME_INPUT_DATA_CY, FULL_NAME_STEP_DATA_CY, LAST_NAME_INPUT_DATA_CY } from '../../../utils/dataCyConstants'
 
 type Name = {
   firstname: string
@@ -83,12 +84,14 @@ const FullNameStep: FC<StepProps> = (props) => {
         inputType: InputType.text,
         initialValue: name.firstname,
         onChange: (event: EventType) => handleOnChange(event, FIRSTNAME),
+        dataCy: FIRST_NAME_INPUT_DATA_CY
       },
       {
         label: translate('Steps.Fullname.label.lastname'),
         inputType: InputType.text,
         initialValue: name.lastname,
         onChange: (event: EventType) => handleOnChange(event, LASTNAME),
+        dataCy: LAST_NAME_INPUT_DATA_CY
       },
     ],
     [fullname]
@@ -96,6 +99,7 @@ const FullNameStep: FC<StepProps> = (props) => {
 
   return (
     <Step
+      dataCy={FULL_NAME_STEP_DATA_CY}
       inputs={inputs}
       onNextStep={onNextStep}
       isInvalid={!isValid}

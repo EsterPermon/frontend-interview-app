@@ -3,6 +3,7 @@ import { EventType, StepProps } from '../../../types/Insurance'
 import { InputType, StepType } from '../../../utils/constants'
 import Step from '../../Step/Step'
 import translate from '../../../locales/i18n'
+import { EMAIL_INPUT_DATA_CY, EMAIL_STEP_DATA_CY } from '../../../utils/dataCyConstants'
 
 const EmailStep: FC<StepProps> = (props) => {
   const [email, setEmail] = useState('')
@@ -33,19 +34,26 @@ const EmailStep: FC<StepProps> = (props) => {
 
   const isValid = useMemo(validateEmail, [email])
 
-  const onNextStep = useCallback(() => props.callback(StepType.email, email), [email])
+  const onNextStep = useCallback(() => props.callback(StepType.email, email), [
+    email,
+  ])
 
-  const inputs = useMemo(() => [
-    {
-      label: translate('Steps.Email.label'),
-      inputType: InputType.text,
-      initialValue: email,
-      onChange: handleOnChange,
-    },
-  ], [email])
+  const inputs = useMemo(
+    () => [
+      {
+        label: translate('Steps.Email.label'),
+        inputType: InputType.text,
+        initialValue: email,
+        onChange: handleOnChange,
+        dataCy: EMAIL_INPUT_DATA_CY
+      },
+    ],
+    [email]
+  )
 
   return (
     <Step
+      dataCy={EMAIL_STEP_DATA_CY}
       inputs={inputs}
       onNextStep={onNextStep}
       isInvalid={!isValid}

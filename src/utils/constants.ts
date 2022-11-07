@@ -20,3 +20,16 @@ export const PRODUCT_IDS_TO_NAMES = {
   [ProductIds.devIns]: 'Developer Insurance',
   [ProductIds.designIns]: 'Design Insurance',
 }
+
+export const DevInsuranceSteps = [
+  StepType.email,
+  StepType.age,
+  StepType.summary,
+]
+
+export const DesignInsuranceSteps = [
+  StepType.fullname,
+  StepType.email,
+  StepType.age,
+  StepType.summary,
+]

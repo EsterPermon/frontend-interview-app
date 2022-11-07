@@ -1,8 +1,13 @@
-import React from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Buyflow, { ProductIds } from './buyflow/Buyflow'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Buyflow from './pages/Buyflow'
+import {
+  DesignInsuranceSteps,
+  DevInsuranceSteps,
+  ProductIds,
+} from './utils/constants'
+import HomePage from './pages/HomePage'
 
 const App = () => {
   return (
@@ -12,12 +17,17 @@ const App = () => {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <Switch>
+          <Route path="/buy/insurance_design">
+            <Buyflow
+              steps={DesignInsuranceSteps}
+              productId={ProductIds.designIns}
+            />
+          </Route>
           <Route path="/buy/insurance_dev">
-            <Buyflow productId={ProductIds.devIns} />
+            <Buyflow steps={DevInsuranceSteps} productId={ProductIds.devIns} />
           </Route>
           <Route path="/">
-            <p>Welcome to Getsafe's Developer Insurance</p>
-            <Link to="/buy/insurance_dev">Get started!</Link>
+            <HomePage />
           </Route>
         </Switch>
       </div>

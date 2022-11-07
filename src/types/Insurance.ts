@@ -13,3 +13,8 @@ export interface InputFieldProps {
 export interface StepProps {
   callback: (field: string, value: number | string) => void
 }
+
+export interface PurchaseDataType {
+  field: string
+  value: number | string
+}

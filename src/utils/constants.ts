@@ -10,3 +10,8 @@ export enum StepType {
   summary = 'Summary',
   fullName = 'Full Name'
 }
+
+export enum ProductIds {
+  devIns = 'dev_ins',
+  designIns = 'design_ins'
+}
